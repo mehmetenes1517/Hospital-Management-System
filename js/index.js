@@ -34,7 +34,7 @@ if(localStorage.getItem("role")!=null&&
 
             table=document.createElement("table");
             //If a secretary logged in
-            table.class="table1";
+            table.className="table1";
             fetch("http://localhost:5001/Patient")
             .then(o=>o.json())
             .then(obj=>{
@@ -61,11 +61,29 @@ if(localStorage.getItem("role")!=null&&
             }).catch(e=>e)
             
             div1=document.querySelector("nav");
-
             document.body.insertBefore(table,div1);
             div1.remove()
             
+            button_div=document.createElement("div");
+            button_div.style="display: flex;flex-direction: row;justify-content: center;align-items: center;";
 
+            create_button=document.createElement("button");
+            create_button.appendChild(document.createTextNode("Create A Patient"));
+            create_button.type="button";
+            create_button.className="btn btn-success m-1";
+
+            delete_button=document.createElement("button");
+            delete_button.appendChild(document.createTextNode("Delete A Patient"))
+            delete_button.type="button";
+            delete_button.className="btn btn-danger m-1";
+            console.log("ım here");
+            button_div.appendChild(create_button);
+            button_div.appendChild(delete_button);
+            console.log(button_div);
+
+            footer_part=document.querySelector("footer");
+
+            document.body.insertBefore(button_div,footer_part);
 
 
             
