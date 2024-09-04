@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging out</title>
+</head>
+<body>
+    <h5>Logging Out....</h5>
+    <script>
+        function release_cookies(){
+            localStorage.removeItem("role");
+            localStorage.removeItem("name");
+            localStorage.removeItem("surname");
+            localStorage.removeItem("username");
+            localStorage.removeItem("password");
+        }
+        release_cookies();
+        setTimeout(
+            ()=> {
+                location.replace("../index.html");
+            },300
+        )
+    </script>
+</body>
+</html>

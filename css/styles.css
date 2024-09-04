@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-header{
+    background-color: rgb(56, 126, 255);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: large;
+    color: white;
+}
+.link-button{
+    padding: 1rem;
+    color: white;
+    text-decoration: dotted;
+}
+.link-button:hover{
+    background-color: rgb(45, 102, 209);
+    cursor: pointer;
+    color: white;
+}

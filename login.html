@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hospital System</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+
+    <header class="main-header" style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+        <div><a href="index.html" class="link-button"><h7>Hospital Management System</h1></a></div>
+        <div style="display: flex;">
+    
+            <a class="link-button" href="login.html">Login</a>
+            <a class="link-button" href="signup.html">Sign Up</a>
+    
+        </div>
+    </header>
+
+    <form class="form-control">
+        <div style="margin: 2rem;">
+            <label for="username">User Name : </label>
+            <input type="text" name="username" class="form-control" id="username" required>
+        </div>
+        <div style="margin: 2rem;">
+            <label for="password">Password : </label>
+            <input type="password" name="password" class="form-control" id="password" required>
+        </div>
+        <div style="margin: 2rem;">
+            <h5>User Type</h5>
+            <div class="form-control">    
+                <label for="doctor">doctor</label>
+                <input type="radio" name="user_type" value="doctor" id="doctor">
+            </div>
+            <div class="form-control">
+                <label for="secretary">secretary</label>
+                <input type="radio" name="user_type" value="secretary" id="secretary">
+            </div>
+            <div class="form-control">
+                <label for="manager">manager</label>
+                <input type="radio" name="user_type" value="manager" id="manager">
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-success form-control" id="login-button">Login</button>
+    </form>
+
+
+
+
+    <script src="js/login.js"></script>
+    <script src="js/index.js"></script>
+
+
+</body>
+</html>
