@@ -6,7 +6,7 @@ app=Flask(__name__)
 CORS(app)
 database_name="hospital_database.db"
 
-@app.route("/Patient",methods=["GET","POST"])
+@app.route("/Patient",methods=["GET","POST","DELETE"])
 def CreatePatient():
     connection=sqlite3.connect(database_name)
     cursor=connection.cursor()
@@ -17,10 +17,14 @@ def CreatePatient():
         req=request.get_json()
         
         id=len(cursor.execute("SELECT * FROM patients").fetchall())
-
         cursor.execute(f"INSERT INTO patients VALUES({id},'{req["name"]}','{req["surname"]}','{req["birthdate"]}','{req["birthloc"]}');")
         connection.commit()
         return "Patient is added successfully",200
+    if request.method=="DELETE":
+        req=request.get_json()
+        cursor.execute(f"DELETE FROM patients WHERE id={req["id"]}")
+        connection.commit()
+        return "Patient Deleted Successfully",200
     else:
         return "Invalid Operation",404
 
