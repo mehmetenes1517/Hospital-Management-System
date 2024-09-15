@@ -12,7 +12,7 @@ if(localStorage.getItem("role")!=null&&
     localStorage.getItem("surname")!=null &&
     localStorage.getItem("username")!=null &&
     localStorage.getItem("password")!=null){
-
+        //Adjusting Blue Bar
         buttonslist[0].setAttribute("href","/");
         if(localStorage.getItem("role")==0){
             buttonslist[0].innerHTML=localStorage.getItem("username");
@@ -21,19 +21,4 @@ if(localStorage.getItem("role")!=null&&
         }
         buttonslist[1].setAttribute("href","/cls/clear.html");
         buttonslist[1].innerHTML="Logout";
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
     }

@@ -9,7 +9,7 @@ is_manager=document.querySelector("#manager");
 
 button=document.querySelector("#login-button");
 
-
+//Releasing Cookies
 function release_cookies(){
     localStorage.removeItem("role");
     localStorage.removeItem("name");
@@ -18,29 +18,7 @@ function release_cookies(){
     localStorage.removeItem("password");
 }
 
-function set_doc_cookies(){
-    fetch("http://localhost:5000/GetDoctor",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({
-            "username":username_box.value
-        })
-    }).then(obj=>obj.json())
-    .then(o=>{
-        localStorage.setItem("role",1);
-        localStorage.setItem("name",o["name"]);
-        localStorage.setItem("surname",o["surname"]);
-        localStorage.setItem("username",o["username"]);
-        localStorage.setItem("password",o["password"]);
-    })
-}
-
-
-
-
-
+//Login Events
 async function send_post() {
     if(is_doctor.checked){
         console.log("doc")
@@ -173,9 +151,6 @@ async function send_post() {
     }else{
         
     }
-    
-    
-    
 }
 
 button.addEventListener("click",send_post);

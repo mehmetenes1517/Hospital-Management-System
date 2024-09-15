@@ -5,21 +5,10 @@ if(localStorage.getItem("role")!=null&&
     localStorage.getItem("password")!=null){
 
 
-
-
-
-
-
-
-
-
-        if(localStorage.getItem("role")==0){
+        if(localStorage.getItem("role")==1 || localStorage.getItem("role")==0){
             
         }
-        else if(localStorage.getItem("role")==1){
-            
-        }
-        else if(localStorage.getItem("role")==2){
+        else if(localStorage.getItem("role")==2 || localStorage.getItem("role")==0){
             
             table=document.createElement("table");
             //If a secretary logged in
